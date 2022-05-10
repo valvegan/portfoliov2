@@ -4,12 +4,12 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
-import { HashRouter } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <HashRouter>
+  <Router>
     <App />
-  </HashRouter>,
+  </Router>,
   document.getElementById("root")
 );
 // If you want your app to work offline and load faster, you can change
