@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { HashRouter as BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Routes, Route } from "react-router-dom";
 import { NavBar } from "./NavBar";
 import { Contact } from "./Contact";
 import { About } from "./About";
@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     console.log(this.state.projects);
     return (
-      <BrowserRouter>
+      <HashRouter>
         <NavBar />
         <Dots />
         <Routes>
@@ -43,7 +43,7 @@ class App extends Component {
           />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
