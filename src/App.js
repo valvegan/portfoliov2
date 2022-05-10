@@ -27,23 +27,20 @@ class App extends Component {
   render() {
     console.log(this.state.projects);
     return (
-      <HashRouter>
+      <div>
         <NavBar />
         <Dots />
         <Routes>
           <Route exact path="/" element={<Home />} />
-
           <Route path="/about" element={<About />} />
-
           <Route path="/contact" element={<Contact />} />
-
           <Route
             path="/portfolio"
             element={<Portfolio projects={this.state.projects} />}
           />
         </Routes>
         <Footer />
-      </HashRouter>
+      </div>
     );
   }
 }
