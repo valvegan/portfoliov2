@@ -10,7 +10,8 @@
       "Test_Runners": ["Jest", "Cucumber", "Puppeteer"],
       "Github_Repo": ["https://github.com/valvegan/events_app"],
       "Live_Site": ["https://valvegan.github.io/events_app/"],
-      "img": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/events_app.png"
+      "img": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/events_app.png",
+      "imgmobile": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/events-app_mobile.jpg"
     },
     {
       "id": "2",
@@ -51,7 +52,8 @@
       "Frameworks": ["Bootstrap"],
       "Github_Repo": ["https://github.com/valvegan/simple-js-app"],
       "Live_Site": ["https://valvegan.github.io/simple-js-app/"],
-      "img": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/simple_js_app.png"
+      "img": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/simple_js_app.png",
+      "mobileimg": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/js-app_mobile.jpg"
     }
   ]
 }
