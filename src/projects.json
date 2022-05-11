@@ -3,8 +3,8 @@
     {
       "id": "1",
       "Title": "The Events_App",
-      "Description": "The Events App is a serverless PWA (progressive web application), developed via TDD (unit, integration, user acceptance, and end-to-end testing) and BDD (Gherkin syntax and features) techniques. Users can access the application with their Google account, then they can browse through a set of fake events fetched from a Google Calendar using the respective Google API. Users can also view data charts about the events available! Pop-up messages appear when a user incurs in a warning, or an error.",
-      "Description_2": "Over the course of my project not only have I worked quite heavily on testing processes, I've also learned about serverless functions and the different cloud services, oAuth and Google verification process, and continuous delivery/continuous integration development processes.",
+      "Description": "A serverless PWA (progressive web application), developed via TDD (unit, integration, user acceptance, and end-to-end testing) and BDD (Gherkin syntax and features) techniques. Users can access the application with their Google account, then they can browse through a set of fake events fetched from a Google Calendar using the respective Google API. Users can also view data charts about the events available! Pop-up messages appear when a user incurs in a warning, or an error.",
+      "Description_2": "Over the course of my project not only have I worked quite heavily on testing processes, I've also learned about serverless functions, cloud service providers, and Google APIs",
       "Serverless_Cloud_Provider": ["AWS Lambda"],
       "Libraries": ["Recharts", "React", "Axios"],
       "Test_Runners": ["Jest", "Cucumber", "Puppeteer"],
@@ -19,21 +19,19 @@
       "Frameworks": ["React-Bootstrap"],
       "Architecture": ["MVC", "Flux", "Redux"],
       "Github_Repo": ["https://github.com/valvegan/myFlix-client"],
-      "Live_Site": ["https://valentina-my-flix-client.netlify.app/"]
+      "Live_Site": ["https://valentina-my-flix-client.netlify.app/"],
+      "img": ""
     },
     {
       "id": "3",
       "Title": "MyFlix API ",
       "Description": "The server side backbone of MyFlix Client. The dabase stores data about a small collection of movies, and the API (myFlix, created following the REST pattern) interacts with it by performing CRUD operations (Create, Read, Update and Delete). Requests are sent via endpoints and/or a request body in JSON format (for registering and updating new users), and tested through Postman. Authentication, authorization, and data validation logic are implemented, and the API meets data security regulations.",
       "Environment": ["Node"],
-      "Database": ["MongoDB"],
+      "Database": ["MongoDB", "PostgreSQL"],
       "Libraries": ["Axios"],
       "Technologies": [
         "Postman",
-        "Heroku (deployment)",
-        "Mongoose (object modelling/schema)",
-        "PostgreSQL (relational database)",
-        "MongoDB Atlas (cloud storage)"
+        "Mongoose"
       ],
       "Frameworks": ["Express"],
       "Nodejs_Middlewares": ["body-parser", "morgan", "CORS", "Passport"],

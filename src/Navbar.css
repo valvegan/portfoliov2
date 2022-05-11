@@ -84,14 +84,10 @@ nav {
   border-right: 3px solid white;
 }
 
-.mobile-nav
 .nav-list-closed, .nav-list-closed li{
 width: 0%;
-}
-
-.mobile-nav
-.menu-expand{
-  color: var(--primary-text-color)
+display: none;
+height: 0px
 }
 
 .nav-list li{

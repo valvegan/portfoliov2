@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Open+Sans:wght@300;400&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Open+Sans:wght@300;400&family=Pacifico&display=swap");
 
 :root {
   --primary-text-color: #171717;
@@ -12,35 +12,129 @@
   --fluro-green: #6dbd3a;
   --intro-font: "Pacifico", cursive;
   --body-font: "Open Sans", sans-serif;
-  --h-font: 'Oleo Script Swash Caps', cursive;
+  --h-font: "Oleo Script Swash Caps", cursive;
 }
 .portfolio-card-container {
-    padding: 30px
-}
-.portfolio-card-container h1{
-    font-size: 2.6rem;
-    font-family: var(--h-font)
-}
-.portfolio-card-container p{
-    font-size: 0.7rem;
+  margin: 30px;
+  background-color: var(--off-white);
+  border-radius: 7%;
+  border: 3px solid;
+  border-color: var(--grey-strong);
+  position: relative;
+  overflow: hidden;
 }
 
-.icons-container{
-    text-align: right;
+.portfolio-card-container h1 {
+  font-size: 2.6rem;
+  font-family: var(--h-font);
+  padding: 10px;
+  background: rgb(14, 14, 15);
+  background: linear-gradient(
+    180deg,
+    rgba(14, 14, 15, 0.810064935064935) 1%,
+    rgba(24, 24, 25, 0) 100%
+  );
+  position: relative;
 }
-.icons-container ul{
-    display: flex;
-    justify-content: flex-end;
+
+.portfolio-card-container h1:after {
+  position: absolute;
+  content: "";
+  height: 7px;
+  bottom: 10%;
+  width: 50%;
+  left: 0;
+  background: var(--green);
+  transition: 0.5s;
 }
-.icons-container ul li{
-    padding-right: 10px
+
+.portfolio-card-container h1:hover:after {
+  width: 100%;
+  background: var(--orange);
 }
+.portfolio-card-container p {
+  font-size: 0.7rem;
+  padding: 10px;
+}
+
+.icons-container {
+  text-align: right;
+  position: relative;
+}
+
+.icons-container ul {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
 .icon {
-    font-size: 2rem;
+  font-size: 2rem;
 }
-.icon:hover{
-    color: var(--green)
+.icon:hover {
+  color: var(--green);
 }
-.icons-container h3, .icons-container .icon-text{
-    font-size: 0.8rem;
+.icons-container h3,
+.icons-container .icon-text {
+  font-size: 0.7rem;
+  padding-right: 10px;
+}
+
+.icons-container h3 {
+  color: var(--secondary-text-color);
+  background: linear-gradient(
+    90deg,
+    rgba(14, 14, 15, 0) 2%,
+    rgba(24, 24, 25, 0.7191977077363897) 100%
+  );
+}
+.icon-text {
+  font-size: 0.2rem;
+}
+.description-2 button {
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.text-icons-container {
+  position: relative;
+  height: 500px;
+}
+.links-container {
+  padding: 10px;
+  margin-left: 10px;
+  position: absolute;
+  bottom: 0%;
+}
+
+.links-container h3:after {
+  position: absolute;
+  content: "";
+  height: 7px;
+  top: 0;
+  width: 250%;
+  left: -15%;
+  background: var(--green);
+  transition: 0.5s;
+}
+
+.links-container h3:hover:after {
+  width: 450%;
+  background: var(--orange);
+}
+
+.links-container ul {
+  display: flex;
+}
+
+.project-description,
+.description-2 {
+  width: 60%;
+}
+.technologies {
+  position: absolute;
+  right: 0;
+  top: 05%;
+  height: 100%;
+  width: 50%;
 }
