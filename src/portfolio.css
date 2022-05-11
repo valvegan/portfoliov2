@@ -63,10 +63,11 @@
   position: relative;
 }
 
-.icons-container ul {
+.icons-container ul,
+.icons-container h3 {
   display: flex;
   justify-content: flex-end;
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
 .project-img {
@@ -78,6 +79,7 @@
   filter: blur(3px);
   transition: filter 0.4s linear;
   z-index: 16;
+  border-radius: 10px;
 }
 .project-img:hover {
   filter: none;
@@ -90,11 +92,13 @@
   color: var(--green);
 }
 .icons-container h3,
-.icons-container .icon-text {
+.icons-container {
   font-size: 0.7rem;
-  padding-right: 10px;
 }
-
+.icon-text {
+  font-size: 0.7rem;
+  padding-left: 5px;
+}
 .icons-container h3 {
   color: var(--secondary-text-color);
   background: linear-gradient(
@@ -103,9 +107,7 @@
     rgba(24, 24, 25, 0.7191977077363897) 100%
   );
 }
-.icon-text {
-  font-size: 0.3rem;
-}
+
 .description-2 button {
   font-size: 1rem;
   margin-left: 10px;
@@ -179,15 +181,20 @@
   .icon {
     font-size: 3rem;
   }
-  .project-description,   .description-2 {
-      width: 55%;
-      margin-left: 15px
+  .project-description,
+  .description-2 {
+    width: 55%;
+    margin-left: 15px;
   }
   .description-2 button {
     font-size: 2rem;
   }
   .project-img {
     width: 60%;
-    left: 5%
+    top: 45%;
+    left: 50px
+  }
+  .icon-text {
+    font-size: 1rem;
   }
 }

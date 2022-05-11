@@ -75,7 +75,7 @@ export class PortfolioList extends React.Component {
 
     return (
         <div key={project.id} className="portfolio-card-container">
-          <a href={project.Github_Repo}>
+          <a href={project.Live_Site || project.Github_Repo} target="_blank" rel="noopener noreferrer">
             <img
               key={project.img}
               className="project-img"
