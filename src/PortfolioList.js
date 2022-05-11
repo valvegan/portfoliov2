@@ -4,13 +4,10 @@ import { FaAws } from "react-icons/fa";
 import { SiHeroku } from "react-icons/si";
 import { SiCucumber } from "react-icons/si";
 import { BsFillBootstrapFill } from "react-icons/bs";
-//external link
 import { FiExternalLink } from "react-icons/fi";
-//codeicon
 import { DiCss3 } from "react-icons/di";
 import { DiSass } from "react-icons/di";
 import { SiJest } from "react-icons/si";
-//download
 import { AiOutlineHtml5 } from "react-icons/ai";
 import { SiJquery } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
@@ -20,7 +17,6 @@ import { SiRedux } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { SiPuppeteer } from "react-icons/si";
 import { SiPostman } from "react-icons/si";
-import { BiLocationPlus } from "react-icons/bi";
 import { SiPostgresql } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { SiPassport } from "react-icons/si";
@@ -78,8 +74,15 @@ export class PortfolioList extends React.Component {
     let iconsNames = icons.map((i) => i.type.name);
 
     return (
-      <div className="porfolio-items">
         <div key={project.id} className="portfolio-card-container">
+          <a href={project.Github_Repo}>
+            <img
+              key={project.img}
+              className="project-img"
+              src={project.img}
+              alt="preview of the project"
+            ></img>
+          </a>
           <h1>{project.Title}</h1>
           <div className="text-icons-container">
             <p className="project-description">{project.Description}</p>
@@ -262,19 +265,7 @@ export class PortfolioList extends React.Component {
               {project.Nodejs_Middlewares && (
                 <div className="icons-container">
                   <h3>Node.js Middlewares</h3>
-                  <ul>
-                    {this.getIndices(
-                      project.Nodejs_Middlewares,
-                      iconsNames
-                    ).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </ul>
+
                   <ul>
                     {project.Nodejs_Middlewares.map((t) => (
                       <li className="icon-text" key={t}>
@@ -306,59 +297,57 @@ export class PortfolioList extends React.Component {
                   </ul>
                 </div>
               )}
-              </div>
+            </div>
 
-              <div className="links-container">
-                <h3>Links</h3>
-                <ul>
-                  {project.Heroku_Deployment && (
-                    <a href={project.Heroku_Deployment}>
-                      {" "}
-                      {this.getIndicesReverse(
-                        project.Heroku_Deployment,
-                        iconsNames
-                      ).map(
-                        (i) =>
-                          i > -1 && (
-                            <li className="icon" key={i}>
-                              {icons[i]}
-                            </li>
-                          )
-                      )}
-                    </a>
-                  )}
+            <div className="links-container">
+              <h3>Links</h3>
+              <ul>
+                {project.Heroku_Deployment && (
+                  <a href={project.Heroku_Deployment}>
+                    {" "}
+                    {this.getIndicesReverse(
+                      project.Heroku_Deployment,
+                      iconsNames
+                    ).map(
+                      (i) =>
+                        i > -1 && (
+                          <li className="icon" key={i}>
+                            {icons[i]}
+                          </li>
+                        )
+                    )}
+                  </a>
+                )}
 
-                  {project.Github_Repo && (
-                    <a href={project.Github_Repo}>
-                      {" "}
-                      {this.getIndicesReverse(
-                        project.Github_Repo,
-                        iconsNames
-                      ).map(
-                        (i) =>
-                          i > -1 && (
-                            <li className="icon" key={i}>
-                              {icons[i]}
-                            </li>
-                          )
-                      )}
-                    </a>
-                  )}
+                {project.Github_Repo && (
+                  <a href={project.Github_Repo}>
+                    {" "}
+                    {this.getIndicesReverse(
+                      project.Github_Repo,
+                      iconsNames
+                    ).map(
+                      (i) =>
+                        i > -1 && (
+                          <li className="icon" key={i}>
+                            {icons[i]}
+                          </li>
+                        )
+                    )}
+                  </a>
+                )}
 
-                  {project.Live_Site && (
-                    <a href={project.Live_Site}>
-                      {" "}
-                      <li className="icon">
-                        <FiExternalLink />
-                      </li>
-                    </a>
-                  )}
-                </ul>
-              </div>
+                {project.Live_Site && (
+                  <a href={project.Live_Site}>
+                    {" "}
+                    <li className="icon">
+                      <FiExternalLink />
+                    </li>
+                  </a>
+                )}
+              </ul>
             </div>
           </div>
-        
-      </div>
+        </div>
     );
   }
 }

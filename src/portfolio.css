@@ -17,8 +17,8 @@
 .portfolio-card-container {
   margin: 30px;
   background-color: var(--off-white);
-  border-radius: 7%;
-  border: 3px solid;
+  border-radius: 25px;
+  border: 2px solid;
   border-color: var(--grey-strong);
   position: relative;
   overflow: hidden;
@@ -27,11 +27,12 @@
 .portfolio-card-container h1 {
   font-size: 2.6rem;
   font-family: var(--h-font);
+  color: var(--secondary-text-color);
   padding: 10px;
   background: rgb(14, 14, 15);
   background: linear-gradient(
     180deg,
-    rgba(14, 14, 15, 0.810064935064935) 1%,
+    rgba(14, 14, 15, 0.9) 1%,
     rgba(24, 24, 25, 0) 100%
   );
   position: relative;
@@ -53,7 +54,7 @@
   background: var(--orange);
 }
 .portfolio-card-container p {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   padding: 10px;
 }
 
@@ -66,6 +67,20 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 10px;
+}
+
+.project-img {
+  position: absolute;
+  width: 120%;
+  left: -8px;
+  opacity: 0.9;
+  top: 52%;
+  filter: blur(3px);
+  transition: filter 0.4s linear;
+  z-index: 16;
+}
+.project-img:hover {
+  filter: none;
 }
 
 .icon {
@@ -89,7 +104,7 @@
   );
 }
 .icon-text {
-  font-size: 0.2rem;
+  font-size: 0.3rem;
 }
 .description-2 button {
   font-size: 1rem;
@@ -98,7 +113,7 @@
 
 .text-icons-container {
   position: relative;
-  height: 500px;
+  height: 800px;
 }
 .links-container {
   padding: 10px;
@@ -131,10 +146,48 @@
 .description-2 {
   width: 60%;
 }
+
+.description-2 {
+  background-color: var(--off-white);
+  opacity: 0.7;
+  z-index: 20;
+  position: absolute;
+  border-radius: 0 0 5% 5%;
+}
 .technologies {
   position: absolute;
   right: 0;
-  top: 05%;
+  top: 0%;
   height: 100%;
   width: 50%;
+}
+
+@media (min-width: 800px) {
+  .portfolio-card-container {
+  }
+  .portfolio-card-container h1 {
+    font-size: 3.5rem;
+  }
+
+  .portfolio-card-container p {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .icons-container h3 {
+    font-size: 1rem;
+  }
+  .icon {
+    font-size: 3rem;
+  }
+  .project-description,   .description-2 {
+      width: 55%;
+      margin-left: 15px
+  }
+  .description-2 button {
+    font-size: 2rem;
+  }
+  .project-img {
+    width: 60%;
+    left: 5%
+  }
 }
