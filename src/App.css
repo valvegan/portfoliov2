@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:wght@300;400&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Open+Sans:wght@300;400&family=Pacifico&display=swap');
 
 :root {
   --primary-text-color: #171717;
@@ -12,8 +12,9 @@
   --fluro-green: #6dbd3a;
   --intro-font: "Pacifico", cursive;
   --body-font: "Open Sans", sans-serif;
-  --h-font: "Cookie", cursive;
+  --h-font: 'Oleo Script Swash Caps', cursive;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,54 +30,76 @@ body {
   font-size: 1rem;
   line-height: 1.6;
 }
-
-.icons-container li, .icons-container ul{
-  display: flex;
-  padding-right: 8px
+.App {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-button{
+button {
   border: none;
   display: inline-block;
   font-size: 3rem;
   text-decoration: none;
   background-color: transparent;
 }
-/**
-.social-media-icons svg{
-  font-size: 2rem;
-  margin: 5px
+.name{
+  display: flex column;
+  position: relative
 }
-.navigation-list {
-  text-transform: uppercase;
-  color: var(--secondary-text-color);
-}
-.profile__info h1 {
+.name h1 {
   font-family: var(--intro-font);
-  font-size: 3rem;
-  width: 100%;}
-h1,
-h2 {
+  font-size: 5rem;
+  width: 100%;
+  line-height: 90%;
+  color: var(--green);
+
+}
+.name:first-child{
+  text-align: left;
+}
+.name h1:last-child{
+  text-align: right;
+    margin-left: 0px;
+}
+
+
+.profile-info h2{
+  font-size: 2.6rem;
   font-family: var(--h-font);
-  font-size: 2rem;
-  margin-bottom: 0;
 }
 h3 {
   font-size: 1rem;
   font-weight: 700;
 }
-a:visited {
+a {
   color: var(--secondary-text-color);
+}
+a:visited {
+  color: var(--grey-strong);
 }
 a:hover,
 a:focus {
   text-decoration: none;
+  color: var(--orange);
 }
 a:active {
   color: var(--green);
 }
 
-.button, button {
+.profile{
+  position: relative;
+  width: 100%;
+}
+.profile-portrait{
+  clear: both;
+  text-align: center;
+}
+.profile-portrait img{
+  width: 90%;
+  
+}
+.button {
   border: none;
   display: inline-block;
   font-family: inherit;
@@ -91,20 +114,16 @@ a:active {
   transition-property: opacity;
 }
 .button:hover,
-.button:focus, button:hover, button:focus {
+.button:focus,
+button:hover,
+button:focus {
   cursor: pointer;
   transform: scale(1.05);
   opacity: 0.8;
 }
-.button__secondary {
-  background-color: var(--orange);
-  font-weight: 600;
-}
 
-
-
-.about-me,
-.profile {
+.about-me
+{
   display: flex;
   flex-direction: row;
   text-align: left;
@@ -118,18 +137,17 @@ a:active {
   margin: 10px;
 }
 
-
 .London-map,
 .about-me-info,
-.profile__info,
-.profile__portrait {
+.profile-info {
   padding: 10px;
+  
 }
 
 
 .map-container {
-    width: 90%;
-    text-align: center;
+  width: 90%;
+  text-align: center;
   position: relative;
   background: rgb(43, 43, 43);
   background: linear-gradient(
@@ -150,26 +168,6 @@ a:active {
   width: 50%;
   position: relative;
 }
-
-
-.page-footer {
-  position: relative;
-}
-
-.social-media {
-  display: inline-block;
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  text-align: center;
-}
-.footer-svg {
-  width: 100%;
-  z-index: 0;
-  position: absolute;
-}
-
-
 
 .grid__item {
   display: inline-block;
@@ -194,7 +192,7 @@ a:active {
   }
 }
 
-.contact__form{
+.contact__form {
   width: 60%;
 }
 .contact {
@@ -205,18 +203,21 @@ a:active {
   flex-direction: row;
   align-items: center;
 }
-.contact__details, .contact__form input {
+.contact__details,
+.contact__form input {
   width: 40%;
 }
-.contact__form input, .contact__form label, .contact__form textarea{
+.contact__form input,
+.contact__form label,
+.contact__form textarea {
   display: block;
   margin: 7px;
 }
-.contact__form textarea{
+.contact__form textarea {
   width: 90%;
   height: 100px;
 }
-.contact__form button{
+.contact__form button {
   margin: 7px;
 }
 .contact h1 {
@@ -224,19 +225,7 @@ a:active {
   margin: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-@media all and (max-width: 400px) {
+/*@media all and (max-width: 400px) {
   .profile__info h1 {
     font-size: 4.5em;
   }
@@ -355,16 +344,4 @@ a:active {
     width: 100%;
   }
 }
-
-
-.bike-icon-pattern {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  padding: 50px 0px;
-}
-.bike-icon-pattern img {
-  padding: 5px;
-}
-
 */

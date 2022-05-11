@@ -7,12 +7,10 @@ import { BsFillBootstrapFill } from "react-icons/bs";
 //external link
 import { FiExternalLink } from "react-icons/fi";
 //codeicon
-import { BsCodeSlash } from "react-icons/bs";
 import { DiCss3 } from "react-icons/di";
 import { DiSass } from "react-icons/di";
 import { SiJest } from "react-icons/si";
 //download
-import { AiOutlineDownload } from "react-icons/ai";
 import { AiOutlineHtml5 } from "react-icons/ai";
 import { SiJquery } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
@@ -27,8 +25,17 @@ import { SiPostgresql } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { SiPassport } from "react-icons/si";
 import { BsGithub } from "react-icons/bs";
+import "./portfolio.css";
 
 export class PortfolioList extends React.Component {
+  state = {
+    buttonExpand: true,
+  };
+
+  buttonToggle() {
+    this.setState({ buttonExpand: !this.state.buttonExpand });
+  }
+
   //find the index of matching icon and then render the icon
   getIndices(values, targets) {
     let value = values.map((v) => v.toLowerCase().slice(0, v.indexOf(" ")));
@@ -75,7 +82,19 @@ export class PortfolioList extends React.Component {
         <div key={project.id} className="portfolio-card-container">
           <h1>{project.Title}</h1>
           <p className="project-description">{project.Description}</p>
-          <p className="project-description-2">{project.Description_2}</p>
+          {project.Description_2 && (
+            <div className="description-2">
+              <button
+                onClick={() => this.buttonToggle()}
+                className={this.state.buttonExpand ? "read-less" : "read-more"}
+              >
+                {this.state.buttonExpand ? "Read less" : "Read more"}
+              </button>
+              {this.state.buttonExpand && 
+              <p className="project-description-2"> {project.Description_2}</p>}
+              
+            </div>
+          )}
 
           {project.Frameworks && (
             <div className="icons-container">
@@ -286,51 +305,50 @@ export class PortfolioList extends React.Component {
               </ul>
             </div>
           )}
+          <div className="icons-container">
+            <h3>Links</h3>
+            <ul>
+              {project.Heroku_Deployment && (
+                <a href={project.Heroku_Deployment}>
+                  {" "}
+                  {this.getIndicesReverse(
+                    project.Heroku_Deployment,
+                    iconsNames
+                  ).map(
+                    (i) =>
+                      i > -1 && (
+                        <li className="icon" key={i}>
+                          {icons[i]}
+                        </li>
+                      )
+                  )}
+                </a>
+              )}
 
-          {project.Heroku_Deployment && (
-            <div className="icons-container">
-              <h3>Links</h3>
-              <a href={project.Heroku_Deployment}>
-                {" "}
-                {this.getIndicesReverse(
-                  project.Heroku_Deployment,
-                  iconsNames
-                ).map(
-                  (i) =>
-                    i > -1 && (
-                      <li className="icon" key={i}>
-                        {icons[i]}
-                      </li>
-                    )
-                )}
-              </a>
-            </div>
-          )}
+              {project.Github_Repo && (
+                <a href={project.Github_Repo}>
+                  {" "}
+                  {this.getIndicesReverse(project.Github_Repo, iconsNames).map(
+                    (i) =>
+                      i > -1 && (
+                        <li className="icon" key={i}>
+                          {icons[i]}
+                        </li>
+                      )
+                  )}
+                </a>
+              )}
 
-          {project.Github_Repo && (
-            <div className="icons-container">
-              <a href={project.Github_Repo}>
-                {" "}
-                {this.getIndicesReverse(project.Github_Repo, iconsNames).map(
-                  (i) =>
-                    i > -1 && (
-                      <li className="icon" key={i}>
-                        {icons[i]}
-                      </li>
-                    )
-                )}
-              </a>
-            </div>
-          )}
-
-          {project.Live_Site && (
-            <div className="icons-container">
-              <a href={project.Live_Site}>
-                {" "}<FiExternalLink /></a>
-              </div>
-          )}
-
-          
+              {project.Live_Site && (
+                <a href={project.Live_Site}>
+                  {" "}
+                  <li className="icon">
+                    <FiExternalLink />
+                  </li>
+                </a>
+              )}
+            </ul>
+          </div>
         </div>
       </div>
     );

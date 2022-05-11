@@ -29,11 +29,11 @@
       "Database": ["MongoDB"],
       "Libraries": ["Axios"],
       "Technologies": [
-        "Postman (in development)",
+        "Postman",
         "Heroku (deployment)",
-        "Mongoose (object modelling/schema tool)",
-        "PostgreSQL (relational database, for the learning process)",
-        "MongoDB Atlas (cloud storage for the database)"
+        "Mongoose (object modelling/schema)",
+        "PostgreSQL (relational database)",
+        "MongoDB Atlas (cloud storage)"
       ],
       "Frameworks": ["Express"],
       "Nodejs_Middlewares": ["body-parser", "morgan", "CORS", "Passport"],

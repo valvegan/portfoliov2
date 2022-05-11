@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Open+Sans:wght@300;400&family=Pacifico&display=swap');
+
+:root {
+  --primary-text-color: #171717;
+  --orange: #e8a644;
+  --off-white: #eaeaea;
+  --grey-light: #bcbcbc;
+  --grey-mild: #828282;
+  --grey-strong: #606060;
+  --secondary-text-color: #2b2b2b;
+  --green: #378870;
+  --fluro-green: #6dbd3a;
+  --intro-font: "Pacifico", cursive;
+  --body-font: "Open Sans", sans-serif;
+  --h-font: 'Oleo Script Swash Caps', cursive;
+}
+.portfolio-card-container {
+    padding: 30px
+}
+.portfolio-card-container h1{
+    font-size: 2.6rem;
+    font-family: var(--h-font)
+}
+.portfolio-card-container p{
+    font-size: 0.7rem;
+}
+
+.icons-container{
+    text-align: right;
+}
+.icons-container ul{
+    display: flex;
+    justify-content: flex-end;
+}
+.icons-container ul li{
+    padding-right: 10px
+}
+.icon {
+    font-size: 2rem;
+}
+.icon:hover{
+    color: var(--green)
+}
+.icons-container h3, .icons-container .icon-text{
+    font-size: 0.8rem;
+}

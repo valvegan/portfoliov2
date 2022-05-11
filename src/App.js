@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     console.log(this.state.projects);
     return (
-      <div>
+      <div className="App">
         <NavBar />
         <Dots />
         <Routes>
