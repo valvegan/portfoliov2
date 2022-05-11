@@ -1,4 +1,5 @@
-  <svg width="150px" height="auto" viewBox="0 0 226 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 226 225" fill="none" xmlns="http://www.w3.org/2000/svg"
+  style="width: inherit; height: inherit">
       <defs>
       <style>
       #gear1, #gear2, #underline {

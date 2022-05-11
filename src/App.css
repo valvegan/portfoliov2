@@ -16,18 +16,33 @@
 }
 * {
   box-sizing: border-box;
-  margin: 0
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 body {
   background-color: rgb(189, 189, 189);
-  overflow-x: hidden;
   color: var(--primary-text-color);
   font-family: var(--body-font);
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.6;
 }
+
+.icons-container li, .icons-container ul{
+  display: flex;
+  padding-right: 8px
+}
+
+button{
+  border: none;
+  display: inline-block;
+  font-size: 3rem;
+  text-decoration: none;
+  background-color: transparent;
+}
+/**
 .social-media-icons svg{
   font-size: 2rem;
   margin: 5px
@@ -38,13 +53,12 @@ body {
 }
 .profile__info h1 {
   font-family: var(--intro-font);
-  font-size: 8rem;
-  line-height: 100%;
-}
+  font-size: 3rem;
+  width: 100%;}
 h1,
 h2 {
   font-family: var(--h-font);
-  font-size: 5rem;
+  font-size: 2rem;
   margin-bottom: 0;
 }
 h3 {
@@ -52,7 +66,6 @@ h3 {
   font-weight: 700;
 }
 a:visited {
-  /* visited link */
   color: var(--secondary-text-color);
 }
 a:hover,
@@ -62,7 +75,7 @@ a:focus {
 a:active {
   color: var(--green);
 }
-/*buttons styling*/
+
 .button, button {
   border: none;
   display: inline-block;
@@ -87,9 +100,9 @@ a:active {
   background-color: var(--orange);
   font-weight: 600;
 }
-/*button styling done*/
-/*flexbox home and about page*/
-/*text*/
+
+
+
 .about-me,
 .profile {
   display: flex;
@@ -104,20 +117,16 @@ a:active {
   width: 40%;
   margin: 10px;
 }
-.about-me-info h1 {
-  line-height: 99%;
-}
-.profile__info h2 {
-  line-height: 90%;
-}
-/*general*/
+
+
 .London-map,
 .about-me-info,
 .profile__info,
 .profile__portrait {
   padding: 10px;
 }
-/*illustration*/
+
+
 .map-container {
     width: 90%;
     text-align: center;
@@ -142,7 +151,7 @@ a:active {
   position: relative;
 }
 
-/*page footer*/
+
 .page-footer {
   position: relative;
 }
@@ -159,111 +168,15 @@ a:active {
   z-index: 0;
   position: absolute;
 }
-/*/*#B9B9B9*/
-/*menu/nav and border animation*/
-.page-header {
-  display: flex;
-  width: 100%;
-  position: relative;
-}
-.page-headerbg {
-  position: relative;
-}
-.page-header-svg__1 {
-  z-index: 1;
-  position: absolute;
-  opacity: 0.6;
-  width: 100%;
-}
-.page-header-svg__2 {
-  z-index: 0;
-  position: absolute;
-  opacity: 0.3;
-  width: 100%;
-}
-.page-header:after {
-  position: absolute;
-  z-index: 12;
-  content: "";
-  bottom: 0;
-  width: 100%;
-  height: 3px;
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 73%
-  );
-  -moz-border-image: -moz-radial-gradient(
-    circle,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 73%
-  );
-  -webkit-border-image: -webkit-radial-gradient(
-    circle,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 73%
-  );
-  border-image: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 73%
-  );
-}
-.navigation-list__item--active {
-  text-decoration: none;
-}
-.page-header__item {
-  flex: 0 1 200px;
-  z-index: 19;
-  position: relative;
-  padding: 10px;
-}
-.page-header__item:last-child {
-  flex-grow: 1;
-  text-align: right;
-}
-.navigation-list {
-  list-style-type: none;
-}
-.navigation-list li {
-  display: inline-block;
-  margin: 10px 8px;
-  padding: 10px;
-  position: relative;
-}
-.navigation-list__item:before,
-.navigation-list__item:after {
-  position: absolute;
-  width: 0%;
-  height: 3px;
-  content: "";
-  background: var(--off-white);
-  transition: all 0.3s;
-  opacity: 0;
-}
-.navigation-list__item:before {
-  left: 0px;
-  top: 0px;
-}
-.navigation-list__item:after {
-  right: 0px;
-  bottom: 0px;
-}
-.navigation-list__item:hover:before,
-.navigation-list__item:hover:after {
-  opacity: 0.6;
-  width: 100%;
-}
-.main-navigation {
-  align-self: center;
-}
-/* start grid fallback */
+
+
+
 .grid__item {
   display: inline-block;
   width: 50%;
   text-align: center;
 }
-/* end grid fallback */
+
 @supports (display: grid) {
   .grid {
     display: grid;
@@ -280,7 +193,7 @@ a:active {
     margin: 40;
   }
 }
-/*contact page*/
+
 .contact__form{
   width: 60%;
 }
@@ -310,7 +223,19 @@ a:active {
   padding: 0;
   margin: 0;
 }
-/*media queries*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media all and (max-width: 400px) {
   .profile__info h1 {
     font-size: 4.5em;
@@ -442,3 +367,4 @@ a:active {
   padding: 5px;
 }
 
+*/
