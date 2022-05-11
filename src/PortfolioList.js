@@ -21,7 +21,7 @@ import { SiPostgresql } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { SiPassport } from "react-icons/si";
 import { BsGithub } from "react-icons/bs";
-import "./portfolio.css";
+import ScrollComponent from "./ScrollComponent";
 
 export class PortfolioList extends React.Component {
   state = {
@@ -74,8 +74,32 @@ export class PortfolioList extends React.Component {
     let iconsNames = icons.map((i) => i.type.name);
 
     return (
-        <div key={project.id} className="portfolio-card-container">
-          <a href={project.Live_Site || project.Github_Repo} target="_blank" rel="noopener noreferrer">
+      <div key={project.id} className="portfolio-card-container">
+        <h1>{project.Title}</h1>
+
+        <p className="project-description">{project.Description}</p>
+        {project.Description_2 && (
+          <div className="description-2">
+            <button
+              onClick={() => this.buttonToggle()}
+              className={this.state.buttonExpand ? "read-less" : "read-more"}
+            >
+              {this.state.buttonExpand ? "Read less" : "Read more"}
+            </button>
+            {this.state.buttonExpand && (
+              <p className="project-description-2"> {project.Description_2}</p>
+            )}
+          </div>
+        )}
+
+        <ScrollComponent img={project.imgmobile} />
+
+        <div className="project-img-wrapper">
+          <a
+            href={project.Live_Site || project.Github_Repo}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               key={project.img}
               className="project-img"
@@ -83,271 +107,218 @@ export class PortfolioList extends React.Component {
               alt="preview of the project"
             ></img>
           </a>
-          <h1>{project.Title}</h1>
-          <div className="text-icons-container">
-            <p className="project-description">{project.Description}</p>
-            {project.Description_2 && (
-              <div className="description-2">
-                <button
-                  onClick={() => this.buttonToggle()}
-                  className={
-                    this.state.buttonExpand ? "read-less" : "read-more"
-                  }
-                >
-                  {this.state.buttonExpand ? "Read less" : "Read more"}
-                </button>
-                {this.state.buttonExpand && (
-                  <p className="project-description-2">
-                    {" "}
-                    {project.Description_2}
-                  </p>
-                )}
-              </div>
-            )}
-            <div className="technologies">
-              {project.Frameworks && (
-                <div className="icons-container">
-                  <h3>Frameworks</h3>
-                  <ul>
-                    {this.getIndices(project.Frameworks, iconsNames).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </ul>
-                  <ul>
-                    {project.Frameworks.map((t) => (
-                      <li className="icon-text" key={t}>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+        </div>
 
-              {project.Libraries && (
-                <div className="icons-container">
-                  <h3>Libraries</h3>
-                  <ul>
-                    {this.getIndices(project.Libraries, iconsNames).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </ul>
-                  <ul>
-                    {project.Libraries.map((t) => (
-                      <li className="icon-text" key={t}>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {project.Serverless_Cloud_Provider && (
-                <div className="icons-container">
-                  <h3>Serverless Cloud Provider</h3>
-                  <ul>
-                    {this.getIndices(
-                      project.Serverless_Cloud_Provider,
-                      iconsNames
-                    ).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </ul>
-                  <ul>
-                    {project.Serverless_Cloud_Provider.map((t) => (
-                      <li className="icon-text" key={t}>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {project.Test_Runners && (
-                <div className="icons-container">
-                  <h3>Test Runners</h3>
-                  <ul>
-                    {this.getIndices(project.Test_Runners, iconsNames).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </ul>
-                  <ul>
-                    {project.Test_Runners.map((t) => (
-                      <li className="icon-text" key={t}>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {project.Architecture && (
-                <div className="icons-container">
-                  <h3>Architecture</h3>
-                  <ul>
-                    {this.getIndices(project.Architecture, iconsNames).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </ul>
-                  <ul>
-                    {project.Architecture.map((t) => (
-                      <li className="icon-text" key={t}>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {project.Environment && (
-                <div className="icons-container">
-                  <h3>Environment</h3>
-                  <ul>
-                    {this.getIndices(project.Environment, iconsNames).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </ul>
-                </div>
-              )}
-
-              {project.Database && (
-                <div className="icons-container">
-                  <h3>Database</h3>
-                  <ul>
-                    {this.getIndices(project.Database, iconsNames).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </ul>
-                  <ul>
-                    {project.Database.map((t) => (
-                      <li className="icon-text" key={t}>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {project.Nodejs_Middlewares && (
-                <div className="icons-container">
-                  <h3>Node.js Middlewares</h3>
-
-                  <ul>
-                    {project.Nodejs_Middlewares.map((t) => (
-                      <li className="icon-text" key={t}>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {project.Technologies && (
-                <div className="icons-container">
-                  <h3>Technologies</h3>
-                  <ul>
-                    {this.getIndices(project.Technologies, iconsNames).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </ul>
-                  <ul>
-                    {project.Technologies.map((t) => (
-                      <li className="icon-text" key={t}>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-
-            <div className="links-container">
-              <h3>Links</h3>
+        <div className="technologies">
+          {project.Frameworks && (
+            <div className="icons-container">
+              <h3>Frameworks</h3>
               <ul>
-                {project.Heroku_Deployment && (
-                  <a href={project.Heroku_Deployment}>
-                    {" "}
-                    {this.getIndicesReverse(
-                      project.Heroku_Deployment,
-                      iconsNames
-                    ).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </a>
-                )}
-
-                {project.Github_Repo && (
-                  <a href={project.Github_Repo}>
-                    {" "}
-                    {this.getIndicesReverse(
-                      project.Github_Repo,
-                      iconsNames
-                    ).map(
-                      (i) =>
-                        i > -1 && (
-                          <li className="icon" key={i}>
-                            {icons[i]}
-                          </li>
-                        )
-                    )}
-                  </a>
-                )}
-
-                {project.Live_Site && (
-                  <a href={project.Live_Site}>
-                    {" "}
-                    <li className="icon">
-                      <FiExternalLink />
-                    </li>
-                  </a>
+                {this.getIndices(project.Frameworks, iconsNames).map(
+                  (i) =>
+                    i > -1 && (
+                      <li className="icon" key={i}>
+                        {icons[i]}
+                      </li>
+                    )
                 )}
               </ul>
+              <ul>
+                {project.Frameworks.map((t) => (
+                  <li className="icon-text" key={t}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          )}
+
+          {project.Libraries && (
+            <div className="icons-container">
+              <h3>Libraries</h3>
+              <ul>
+                {this.getIndices(project.Libraries, iconsNames).map(
+                  (i) =>
+                    i > -1 && (
+                      <li className="icon" key={i}>
+                        {icons[i]}
+                      </li>
+                    )
+                )}
+              </ul>
+              <ul>
+                {project.Libraries.map((t) => (
+                  <li className="icon-text" key={t}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {project.Serverless_Cloud_Provider && (
+            <div className="icons-container">
+              <h3>Serverless Cloud Provider</h3>
+              <ul>
+                {this.getIndices(
+                  project.Serverless_Cloud_Provider,
+                  iconsNames
+                ).map(
+                  (i) =>
+                    i > -1 && (
+                      <li className="icon" key={i}>
+                        {icons[i]}
+                      </li>
+                    )
+                )}
+              </ul>
+              <ul>
+                {project.Serverless_Cloud_Provider.map((t) => (
+                  <li className="icon-text" key={t}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {project.Test_Runners && (
+            <div className="icons-container">
+              <h3>Test Runners</h3>
+              <ul>
+                {this.getIndices(project.Test_Runners, iconsNames).map(
+                  (i) =>
+                    i > -1 && (
+                      <li className="icon" key={i}>
+                        {icons[i]}
+                      </li>
+                    )
+                )}
+              </ul>
+              <ul>
+                {project.Test_Runners.map((t) => (
+                  <li className="icon-text" key={t}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {project.Architecture && (
+            <div className="icons-container">
+              <h3>Architecture</h3>
+              <ul>
+                {this.getIndices(project.Architecture, iconsNames).map(
+                  (i) =>
+                    i > -1 && (
+                      <li className="icon" key={i}>
+                        {icons[i]}
+                      </li>
+                    )
+                )}
+              </ul>
+              <ul>
+                {project.Architecture.map((t) => (
+                  <li className="icon-text" key={t}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {project.Database && (
+            <div className="icons-container">
+              <h3>Database</h3>
+              <ul>
+                {this.getIndices(project.Database, iconsNames).map(
+                  (i) =>
+                    i > -1 && (
+                      <li className="icon" key={i}>
+                        {icons[i]}
+                      </li>
+                    )
+                )}
+              </ul>
+              <ul>
+                {project.Database.map((t) => (
+                  <li className="icon-text" key={t}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {project.Technologies && (
+            <div className="icons-container">
+              <h3>Technologies</h3>
+              <ul>
+                {this.getIndices(project.Technologies, iconsNames).map(
+                  (i) =>
+                    i > -1 && (
+                      <li className="icon" key={i}>
+                        {icons[i]}
+                      </li>
+                    )
+                )}
+              </ul>
+              <ul>
+                {project.Technologies.map((t) => (
+                  <li className="icon-text" key={t}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
+
+        <div className="links-container">
+          <h3>Links</h3>
+          <ul>
+            {project.Heroku_Deployment && (
+              <a href={project.Heroku_Deployment}>
+                {" "}
+                {this.getIndicesReverse(
+                  project.Heroku_Deployment,
+                  iconsNames
+                ).map(
+                  (i) =>
+                    i > -1 && (
+                      <li className="icon" key={i}>
+                        {icons[i]}
+                      </li>
+                    )
+                )}
+              </a>
+            )}
+
+            {project.Github_Repo && (
+              <a href={project.Github_Repo}>
+                {" "}
+                {this.getIndicesReverse(project.Github_Repo, iconsNames).map(
+                  (i) =>
+                    i > -1 && (
+                      <li className="icon" key={i}>
+                        {icons[i]}
+                      </li>
+                    )
+                )}
+              </a>
+            )}
+
+            {project.Live_Site && (
+              <a href={project.Live_Site}>
+                {" "}
+                <li className="icon">
+                  <FiExternalLink />
+                </li>
+              </a>
+            )}
+          </ul>
+        </div>
+      </div>
     );
   }
 }

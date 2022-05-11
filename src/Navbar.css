@@ -18,11 +18,16 @@
 
 .page-header-bg img {
   position: absolute;
-  z-index: 2;
+  z-index: -1;
   width: 100%;
+  
 }
-.page-header-bg img:last-child {
-  z-index: 5;
+.page-header-bg:first-child {
+  z-index: -10;
+  opacity: 70%;
+}
+.page-header-bg:last-child {
+  z-index: -10;
   opacity: 70%;
 }
 

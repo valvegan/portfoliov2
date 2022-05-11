@@ -22,7 +22,8 @@
       "Architecture": ["MVC", "Flux", "Redux"],
       "Github_Repo": ["https://github.com/valvegan/myFlix-client"],
       "Live_Site": ["https://valentina-my-flix-client.netlify.app/"],
-      "img": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/myflix_client.png"
+      "img": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/myflix_client.png",
+      "imgmobile": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/myflix_mobile.jpg"
     },
     {
       "id": "3",
@@ -53,7 +54,7 @@
       "Github_Repo": ["https://github.com/valvegan/simple-js-app"],
       "Live_Site": ["https://valvegan.github.io/simple-js-app/"],
       "img": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/simple_js_app.png",
-      "mobileimg": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/js-app_mobile.jpg"
+      "imgmobile": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/js-app_mobile.jpg"
     }
   ]
 }

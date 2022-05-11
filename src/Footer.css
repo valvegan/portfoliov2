@@ -38,4 +38,9 @@
 }
 .bike-icon-pattern img {
   padding: 5px;
+    transition: all 3s ease-in-out;
+ 
 }
+.bike-icon-pattern img:hover {
+    transform: scale(1.26);
+  }
