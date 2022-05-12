@@ -22,7 +22,6 @@ export function Footer() {
         <RepeatBikes />
       </div>
       <div className="social-media">
-        <p>Find me on</p>
         <div className="social-media-icons">
           <a href="https://github.com/valvegan">
             {" "}

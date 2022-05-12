@@ -25,7 +25,7 @@ import ScrollComponent from "./ScrollComponent";
 
 export class PortfolioList extends React.Component {
   state = {
-    buttonExpand: true,
+    buttonExpand: false,
   };
 
   buttonToggle() {
@@ -113,7 +113,7 @@ export class PortfolioList extends React.Component {
           {project.Frameworks && (
             <div className="icons-container">
               <h3>Frameworks</h3>
-              <ul>
+              <ul className="icons-ul">
                 {this.getIndices(project.Frameworks, iconsNames).map(
                   (i) =>
                     i > -1 && (
@@ -136,7 +136,7 @@ export class PortfolioList extends React.Component {
           {project.Libraries && (
             <div className="icons-container">
               <h3>Libraries</h3>
-              <ul>
+              <ul className="icons-ul">
                 {this.getIndices(project.Libraries, iconsNames).map(
                   (i) =>
                     i > -1 && (
@@ -159,7 +159,7 @@ export class PortfolioList extends React.Component {
           {project.Serverless_Cloud_Provider && (
             <div className="icons-container">
               <h3>Serverless Cloud Provider</h3>
-              <ul>
+              <ul className="icons-ul">
                 {this.getIndices(
                   project.Serverless_Cloud_Provider,
                   iconsNames
@@ -185,7 +185,7 @@ export class PortfolioList extends React.Component {
           {project.Test_Runners && (
             <div className="icons-container">
               <h3>Test Runners</h3>
-              <ul>
+              <ul className="icons-ul">
                 {this.getIndices(project.Test_Runners, iconsNames).map(
                   (i) =>
                     i > -1 && (
@@ -208,7 +208,7 @@ export class PortfolioList extends React.Component {
           {project.Architecture && (
             <div className="icons-container">
               <h3>Architecture</h3>
-              <ul>
+              <ul className="icons-ul">
                 {this.getIndices(project.Architecture, iconsNames).map(
                   (i) =>
                     i > -1 && (
@@ -231,7 +231,7 @@ export class PortfolioList extends React.Component {
           {project.Database && (
             <div className="icons-container">
               <h3>Database</h3>
-              <ul>
+              <ul className="icons-ul">
                 {this.getIndices(project.Database, iconsNames).map(
                   (i) =>
                     i > -1 && (
@@ -253,7 +253,7 @@ export class PortfolioList extends React.Component {
           {project.Technologies && (
             <div className="icons-container">
               <h3>Technologies</h3>
-              <ul>
+              <ul className="icons-ul">
                 {this.getIndices(project.Technologies, iconsNames).map(
                   (i) =>
                     i > -1 && (

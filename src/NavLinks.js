@@ -1,93 +1,61 @@
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import React from "react";
-import { AiOutlineDownload } from "react-icons/ai";
+import { motion } from "framer-motion";
 
-export class NavLinks extends React.Component {
-  state = {
-    menuExpanded: false,
-  };
+const NavLinks = (props) => {
 
-  menuToggle() {
-    this.setState({ menuExpanded: !this.state.menuExpanded });
-  }
-  render() {
-    return (
-      <div>
-        <button
-          onClick={() => this.menuToggle()}
-          className={this.state.menuExpanded ? "menu-close" : "menu-expand"}
-        >
-          {this.state.menuExpanded ? (
-            <AiOutlineCloseCircle />
-          ) : (
-            <GiHamburgerMenu />
-          )}
-        </button>
+  const animateFrom = {opactity: 0, x: -40}
+  const animateTo = {opactity: 1, x: 0}
+  return (
+      <ul role="menubar" className="nav-list">
+        <Link to={`/`}>
+          <motion.li className={!props.isMobile && "list-item"}
+          initial={animateFrom} 
+          animate={animateTo} 
+          transition={{delay: 0.05}}
+          onClick={() => props.isMobile && props.closeMobile()}>
+            Home
+          </motion.li>
+        </Link>
+        <Link to={`/about`}>
+          <motion.li className={!props.isMobile && "list-item"}
+          initial={animateFrom} 
+          animate={animateTo} 
+          transition={{delay: 0.05}}
+           onClick={() => props.isMobile && props.closeMobile()}>
+            About
+          </motion.li>
+        </Link>
+        <Link to={`/portfolio`}>
+          <motion.li  className={!props.isMobile && "list-item"}
+          initial={animateFrom} 
+          animate={animateTo} 
+          transition={{delay: 0.05}}
+          onClick={() => props.isMobile && props.closeMobile()}>
+            Portfolio
+          </motion.li>
+        </Link>
+        <Link to={`/contact`}>
+          <motion.li 
+          className={!props.isMobile && "list-item"}
+          initial={animateFrom} 
+          animate={animateTo} 
+          transition={{delay: 0.05}}
+          onClick={() => props.isMobile && props.closeMobile()}>
+            Contact
+          </motion.li>
+        </Link>
+        <Link to={`/contact`}>
+          <motion.li className={!props.isMobile && "list-item"}
+           initial={animateFrom} 
+          animate={animateTo} 
+          transition={{delay: 0.05}}
+          onClick={() => props.isMobile && props.closeMobile()}>
+            CV
+          </motion.li>
+        </Link>
+      </ul>
+  );
+};
 
-        <ul
-          role="menubar"
-          className={
-            this.state.menuExpanded
-              ? "nav-list nav-list-open"
-              : "nav-list nav-list-closed"
-          }
-        >
-          <Link to={`/`}>
-            <li
-              onClick={() => this.menuToggle()}
-              className={
-                this.state.menuExpanded
-                  ? "first-li nav-li-open"
-                  : "first-li nav-li-closed"
-              }
-            >
-              Home
-            </li>
-          </Link>
-          <Link to={`/about`}>
-            <li
-              onClick={() => this.menuToggle()}
-              className={
-                this.state.menuExpanded ? "nav-li-open" : "nav-li-closed"
-              }
-            >
-              About
-            </li>
-          </Link>
-          <Link to={`/portfolio`}>
-            <li
-              onClick={() => this.menuToggle()}
-              className={
-                this.state.menuExpanded ? "nav-li-open" : "nav-li-closed"
-              }
-            >
-              Portfolio
-            </li>
-          </Link>
-          <Link to={`/contact`}>
-            <li
-              onClick={() => this.menuToggle()}
-              className={
-                this.state.menuExpanded ? "nav-li-open" : "nav-li-closed"
-              }
-            >
-              Contact
-            </li>
-          </Link>
-          <Link to={`/contact`}>
-            <li
-              onClick={() => this.menuToggle()}
-              className={
-                this.state.menuExpanded ? "nav-li-open" : "nav-li-closed"
-              }
-            >
-              CV
-            </li>
-          </Link>
-        </ul>
-      </div>
-    );
-  }
-}
+export default NavLinks;

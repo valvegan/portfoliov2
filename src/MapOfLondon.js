@@ -1,10 +1,8 @@
 import React from "react";
-import LondonMap from "./images/MAPOFLONDON2.svg";
-import "./About-london-map.css"
 
  const MyLondonMap = (props) => {
         return(
-   
+
     <svg style={{ width: "inherit", height: "inherit" }} viewBox="0 0 900 670" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       
             <g id="Layer_5">
@@ -1614,7 +1612,7 @@ import "./About-london-map.css"
        
     </svg>
 
-       
+   
   
  
   )

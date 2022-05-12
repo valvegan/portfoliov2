@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./NavBar";
 import { Contact } from "./Contact";
 import { About } from "./About";
@@ -9,6 +9,7 @@ import { Home } from "./Home";
 import { Portfolio } from "./Portfolio";
 import myJson from "./projects.json";
 import Dots from "./Dots";
+
 
 class App extends Component {
   state = {

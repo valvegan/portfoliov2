@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Open+Sans:wght@300;400&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Open+Sans:wght@300;400&family=Pacifico&display=swap");
 
 :root {
   --primary-text-color: #171717;
   --orange: #e8a644;
   --off-white: #eaeaea;
   --grey-light: #bcbcbc;
-  --grey-mild: #828282;
+  --grey-mild: #999898;
   --grey-strong: #606060;
   --secondary-text-color: #2b2b2b;
   --green: #378870;
   --fluro-green: #6dbd3a;
   --intro-font: "Pacifico", cursive;
   --body-font: "Open Sans", sans-serif;
-  --h-font: 'Oleo Script Swash Caps', cursive;
+  --h-font: "Oleo Script Swash Caps", cursive;
 }
 
 * {
@@ -43,34 +43,110 @@ button {
   text-decoration: none;
   background-color: transparent;
 }
-.name{
+
+.profile button,
+.about-text button {
+  font-size: 2rem;
+  background-color: var(--orange);
+  padding: 7px;
+  margin: 4px;
+  border-radius: 15px;
+  transition: all 1s ease-in;
+  border: 4px solid;
+  border-color: var(--green);
+  font-weight: 600;
+  cursor: pointer;
+}
+.profile button:hover,
+.about-text button:hover {
+  background-color: var(--green);
+  color: var(--grey-strong);
+  animation: colortext 1s forwards;
+  border-color: var(--orange);
+}
+
+@keyframes colortext {
+  0% {
+    color: var(--secondary-text-color);
+  }
+  50% {
+    color: var(--grey-strong);
+  }
+  100% {
+    color: var(--secondary-text-color);
+  }
+}
+
+.name {
   display: flex column;
-  position: relative
+  position: relative;
 }
 .name h1 {
   font-family: var(--intro-font);
-  font-size: 5rem;
+  font-size: 4rem;
   width: 100%;
   line-height: 90%;
   color: var(--green);
-
+  margin: 1rem 0 1rem 0;
 }
-.name:first-child{
-  text-align: left;
-}
-.name h1:last-child{
+.name h1:first-child {
+  transform: translateX(30%);
   text-align: right;
-    margin-left: 0px;
+  animation: h1animation2 25s ease-in-out infinite reverse;
+}
+.name h1:last-child {
+  transform: translateX(-01%);
+  animation: h1animation1 20s ease-in-out infinite;
 }
 
+@keyframes h1animation1 {
+  0% {
+    transform: translateX(-01%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(-01%);
+  }
+}
 
-.profile-info h2{
-  font-size: 2.6rem;
+@keyframes h1animation2 {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+.profile-info {
+  position: relative;
+  width: 100%;
+}
+
+.profile-info-initial {
+  font-size: 1.5rem;
+  font-family: var(--h-font);
+  position: absolute;
+  top: -14%;
+  width: 100%;
+  text-align: center;
+}
+
+.profile-info-last {
+  text-align: center;
+  font-size: 1.5rem;
   font-family: var(--h-font);
 }
+
 h3 {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  font-family: var(--body-font);
 }
 a {
   color: var(--secondary-text-color);
@@ -87,111 +163,55 @@ a:active {
   color: var(--green);
 }
 
-.profile{
+.profile {
   position: relative;
   width: 100%;
 }
-.profile-portrait{
+.profile-portrait {
   clear: both;
   text-align: center;
 }
-.profile-portrait img{
+.profile-portrait img {
   width: 90%;
-  
 }
-.button {
-  border: none;
-  display: inline-block;
-  font-family: inherit;
-  background-color: var(--green);
-  color: var(--off-white);
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 7px;
-  border-bottom: 2px solid #a09d9d;
-  text-transform: uppercase;
-  transition-duration: 0.2s;
-  transition-property: opacity;
+.about {
+  position: relative;
 }
-.button:hover,
-.button:focus,
-button:hover,
-button:focus {
-  cursor: pointer;
-  transform: scale(1.05);
-  opacity: 0.8;
+.london-map {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+.map-bg {
+  position: relative;
+  width: 100%;
+  z-index: -1;
+  margin-bottom: 70px;
 }
 
-.about-me
-{
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-  width: 100%;
-  flex-wrap: wrap-reverse;
-  justify-content: center;
+.about-text {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+  clear: both;
+  padding: 15px;
+  background-color: var(--grey-mild);
+  border-radius: 20px;
+  box-shadow: 0 0 10px 10px var(--grey-mild);
 }
-.about-me-info {
-  text-align: right;
-  width: 40%;
+.about-text button {
+  margin: auto;
+  display: flex;
+  padding: 5px;
+  flex-direction: center;
+}
+
+.about-text-btn {
   margin: 10px;
 }
-
-.London-map,
-.about-me-info,
-.profile-info {
-  padding: 10px;
-  
+.about-text h3 {
+  font-size: 1.5rem;
 }
-
-
-.map-container {
-  width: 90%;
-  text-align: center;
-  position: relative;
-  background: rgb(43, 43, 43);
-  background: linear-gradient(
-    0deg,
-    rgba(43, 43, 43, 0) 0%,
-    rgba(43, 43, 43, 0.6867121848739496) 9%,
-    rgba(29, 29, 29, 1) 23%,
-    rgba(34, 34, 34, 1) 77%,
-    rgba(43, 43, 43, 0.4206057422969187) 95%,
-    rgba(43, 43, 43, 0) 100%
-  );
-}
-
-.profile__portrait img {
-  width: 100%;
-}
-.profile__portrait {
-  width: 50%;
-  position: relative;
-}
-
-.grid__item {
-  display: inline-block;
-  width: 50%;
-  text-align: center;
-}
-
-@supports (display: grid) {
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 40px;
-    margin: 0;
-    padding: 16px;
-  }
-  .grid__item {
-    background-color: lightgray;
-    width: auto;
-    padding: 16px;
-    min-height: auto;
-    margin: 40;
-  }
-}
-
 .contact__form {
   width: 60%;
 }
@@ -225,123 +245,173 @@ button:focus {
   margin: 0;
 }
 
-/*@media all and (max-width: 400px) {
-  .profile__info h1 {
-    font-size: 4.5em;
+@media all and (min-width: 400px) {
+  .name h1 {
+    font-size: 7rem;
   }
-  img.page-header__item {
-    height: 80px;
+
+  .about-text {
+    margin-top: 70px;
+    margin-bottom: 30px;
   }
 }
 
-@media all and (max-width: 500px) {
-  .page-header-svg__1 {
-    width: 200%;
-  }
-  img.page-header__item {
-    height: 120px;
-  }
-  .page-header-svg__2 {
-    width: 400%;
-  }
-  .page-header__item {
-    padding: 0px;
-  }
-  .page-header {
-    font-size: 0.6rem;
-  }
-}
-@media all and (min-width: 400px) and (max-width: 500px) {
-  .about-me-info {
-    text-align: left;
-    width: 100%;
-    margin: 10px;
-  }
-  img.page-header__item {
-    height: 140px;
-  }
-  .profile__info h1 {
-    font-size: 5.8em;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-@media all and (min-width: 500px) and (max-width: 800px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .page-header-svg__1 {
-    width: 200%;
-  }
-  img.page-header__item {
-    height: 120px;
-  }
-  .page-header-svg__2 {
-    width: 200%;
-  }
-  img.page-header__item {
-    height: 160px;
-    margin: 10px 15px;
-  }
-}
-@media all and (max-width: 800px) {
-  .grid__item:last-child {
-    grid-column: auto / auto;
-    grid-row: auto / auto;
-  }
-  .grid {
-    grid-gap: 10px;
-  }
-  .footer-svg {
-    height: 120px;
-    width: 100%;
-  }
-  .profile__portrait {
-    width: 100%;
-  }
-  .profile__info h1, .profile__info {
+@media all and (min-width: 950px) {
+  .london-map {
+    width: 80%;
     text-align: center;
+    top: 05%;
+    left: 10%;
   }
-  .about-me-info {
+  .map-bg {
+    margin: 30px 0 30px 0;
+  }
+  .about h3 {
+    font-size: 2rem;
+  }
+  .about p {
+    font-size: 1.2rem;
+  }
+
+  .profile-portrait img {
+    width: 50%;
+    display: flex;
+    margin: 25px;
+  }
+
+  .profile-info-initial {
+    position: absolute;
+    top: -30%;
+    right: 10%;
+    text-align: right;
+  }
+  .name h1 {
+    font-size: 8rem;
+    text-align: center !important;
+    margin: 0;
+    animation: none !important;
+    width: 80%;
+    padding: 0;
+  }
+  .name h1:first-child {
+    margin-right: 20px;
+  }
+  .profile-info-last {
+    margin-top: 20px;
+  }
+}
+
+@media all and (min-width: 1050px) {
+  .profile-info-initial {
+    position: relative;
+    text-align: right;
+    transform: translateX(-20%);
+  }
+  .profile-portrait img {
+    margin-bottom: 80px;
+  }
+  .name h1 {
+    padding: 10px;
+  }
+
+  .name h1:first-child {
+    transform: translateX(10%);
+  }
+  .name h1:last-child {
+    transform: translateX(15%);
+  }
+
+  .profile-info {
+    transform: translateX(25%);
+    position: absolute;
+    top: 0;
+  }
+}
+@media all and (min-width: 1250px) {
+
+  .profile-info-initial {
+    transform: translateX(-30%);
+  }
+  .profile-portrait img {
+    margin-bottom: 0px;
+  }
+
+  .about-text {
+    position: absolute;
+    top: 5%;
+    width: 30%;
+    right: 05%;
+    background-color: transparent !important;
+    box-shadow: none;
+    text-align: right;
+  }
+  .about-text p {
+    font-size: 1rem;
+  }
+  .london-map {
     width: 80%;
     text-align: left;
+    left: 0%;
   }
-  .London-map {
-    width: 70%;
-    margin-top: 1rem;
-  }
-  .contact__form{
-  width: 100%;
 }
-.contact__details, .contact__form input {
-  width: 80%;
-}
-}
-@media all and (min-width: 800px) and (max-width: 1200px) {
-  .page-header-svg__1 {
-    width: 100%;
+@media all and (min-width: 1500px){
+  .about-text {
+    width: 30%;
   }
-  .page-header-svg__2 {
-    width: 100%;
+  .about-text p {
+    font-size: 1.3rem;
   }
-  .about-me-info {
+}
+@media all and (min-width: 1700px){
+  .profile-info-initial{
+    font-size: 4rem;
+    right: 05%
+  }
+  .name h1{
+    font-size: 10rem;
+  }
+  .profile-info-last{
+    font-size: 3rem;
+  }
+}
+@media all and (min-width: 1900px){
+  .about-text {
+    width: 27%;
+  }
+  .about-text p {
+    font-size: 1.6rem;
+  }
+}
+@media all and (min-width: 2000px){
+  .about-text h3{
+    font-size: 3rem
+  }
+  .london-map {
+    width: 1000px;
     text-align: left;
+    left: 8%;
+    top: 18%
   }
-  .profile__info {
-    width: 50%;
-    flex-wrap: nowrap;
+  .about-text {
+    width: 33%;
+    margin-right: 50px
   }
-  .profile__portrait {
-    width: 50%;
-    margin-top: 50px;
-  }
-  img.page-header__item {
-    height: 200px;
-    margin: 20px 20px;
-  }
-  .footer-svg {
-    width: 100%;
+  .about-text-btn button{
+    font-size: 3rem;
   }
 }
-*/
+@media all and (min-width: 2200px){
+.profile-info-initial{
+  right: 17%
+}
+.name h1{
+ margin-left: -200px;
+}
+.profile-info-last{
+  font-size: 3rem;
+  margin-left: -400px;
+}
+.profile-info-last h3{
+  font-size: 2rem;
+}
+}

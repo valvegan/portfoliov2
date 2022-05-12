@@ -8,6 +8,8 @@
   z-index: 1;
   width: 100%;
   position: relative;
+  padding-bottom: 20px;
+  text-align: center;
 }
 .footer-svg {
   width: 100%;
@@ -17,8 +19,7 @@
 .social-media-icons {
   font-size: 3rem;
   margin: 5px;
-  top: 25%;
-  padding: 5px;
+  top: 50%;
   position: absolute;
   width: 100%;
   display: flex;
@@ -26,9 +27,15 @@
   justify-content: center;
   align-items: center;
 }
-.social-media-icons svg{
-    margin: 5px;
+.social-media-icons svg {
+  transition: all 1s ease;
+  margin: 10px;
 }
+
+.social-media-icons svg:hover {
+  transform: scale(1.25);
+}
+
 .bike-icon-pattern {
   display: flex;
   width: 100%;
@@ -38,9 +45,18 @@
 }
 .bike-icon-pattern img {
   padding: 5px;
-    transition: all 3s ease-in-out;
- 
+  transition: all 3s ease-in-out;
 }
 .bike-icon-pattern img:hover {
-    transform: scale(1.26);
+  transform: scale(1.26);
+}
+@media all and (min-width: 1000px) {
+  .social-media-icons {
+    top: 250%;
   }
+  .footer-svg {
+    width: 100%;
+    z-index: 0;
+    position: relative;
+  }
+}
