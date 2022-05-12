@@ -199,9 +199,11 @@ nav {
   .nav-list a {
     position: relative;
     text-transform: uppercase;
+      color: var(--secondary-bg-color)
   }
   .nav-list a:hover {
     color: var(--green);
+
   }
 
   .nav-list a li:after {
