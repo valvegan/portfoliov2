@@ -45,7 +45,8 @@ const NavLinks = (props) => {
             Contact
           </motion.li>
         </Link>
-        <Link to={`/contact`}>
+
+        <a href="./images/Document.rtf" download>
           <motion.li className={!props.isMobile && "list-item"}
            initial={animateFrom} 
           animate={animateTo} 
@@ -53,7 +54,7 @@ const NavLinks = (props) => {
           onClick={() => props.isMobile && props.closeMobile()}>
             CV
           </motion.li>
-        </Link>
+          </a>
       </ul>
   );
 };

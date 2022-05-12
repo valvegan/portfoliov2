@@ -136,7 +136,6 @@
   margin-right: 0;
   position: relative;
   background-color: rgba(255, 255, 255, 0.411);
-
 }
 .icons-ul li {
   z-index: 100;
@@ -154,7 +153,6 @@
   z-index: 0;
   background-color: rgba(255, 255, 255, 0.493);
   box-shadow: 5px 5px 7px 7px rgba(255, 255, 255, 0.493);
-
 }
 
 .icons-container h3 {
@@ -185,7 +183,6 @@
   left: -15%;
   background: var(--green);
   transition: 0.5s;
-  
 }
 
 .links-container h3:hover:after {
