@@ -22,6 +22,7 @@ import { SiExpress } from "react-icons/si";
 import { SiPassport } from "react-icons/si";
 import { BsGithub } from "react-icons/bs";
 import ScrollComponent from "./ScrollComponent";
+import "./portfolio-file.css";
 
 export class PortfolioList extends React.Component {
   state = {
