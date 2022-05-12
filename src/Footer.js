@@ -5,7 +5,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import footer_svg from "./images/footer_svg.svg";
 import bikeToRepeat from "./images/bikeIcon_rotating-wheels.svg";
-import "./Footer.css"
+import "./Footer.css";
 
 function RepeatBikes() {
   const elements = [];

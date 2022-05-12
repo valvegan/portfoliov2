@@ -1,11 +1,8 @@
 import React from "react";
-import {PortfolioList} from './PortfolioList';
+import { PortfolioList } from "./PortfolioList";
 import "./portfolio.css";
 
 export class Portfolio extends React.Component {
-
-
-    
   render() {
     const { projects } = this.props;
 

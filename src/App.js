@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./NavBar";
 import { Contact } from "./Contact";
@@ -9,7 +9,6 @@ import { Home } from "./Home";
 import { Portfolio } from "./Portfolio";
 import myJson from "./projects.json";
 import Dots from "./Dots";
-
 
 class App extends Component {
   state = {

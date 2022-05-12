@@ -9,8 +9,6 @@ import valLogo from "./images/valentinalogo_simplified.svg";
 import "./Navbar.css";
 
 export class NavBar extends React.Component {
-
-
   render() {
     return (
       <header className="page-header">
@@ -25,8 +23,8 @@ export class NavBar extends React.Component {
             alt="Personal logo of Valentina, a text logo that consists of my name"
           ></img>
         </div>
-        <Navigation/>
-        <MobileNav/>
+        <Navigation />
+        <MobileNav />
       </header>
     );
   }

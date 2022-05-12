@@ -8,10 +8,10 @@ export class About extends React.Component {
   render() {
     return (
       <div className="about">
-        
-          <div className="map-bg">
-            <MapBg />
-          </div><div className="london-map">
+        <div className="map-bg">
+          <MapBg />
+        </div>
+        <div className="london-map">
           <MyLondonMap width="100%" />
         </div>
         <div className="about-text">

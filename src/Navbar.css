@@ -199,11 +199,10 @@ nav {
   .nav-list a {
     position: relative;
     text-transform: uppercase;
-      color: var(--secondary-bg-color)
+    color: var(--secondary-bg-color);
   }
   .nav-list a:hover {
     color: var(--green);
-
   }
 
   .nav-list a li:after {
@@ -255,23 +254,17 @@ nav {
   .nav-list a li {
     font-size: 1.6rem;
   }
-
 }
 @media all and (min-width: 1100px) {
   .logo-container img {
-    left: 05%
+    left: 05%;
   }
-  .nav-list{
-    margin-right: 30px
-  }
-
-}
-@media all and (min-width: 1500px){
-  .nav-list{
-    margin-right: 70px
+  .nav-list {
+    margin-right: 30px;
   }
 }
-
-
-
-
+@media all and (min-width: 1500px) {
+  .nav-list {
+    margin-right: 70px;
+  }
+}
