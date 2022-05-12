@@ -29,12 +29,7 @@
   font-family: var(--h-font);
   color: var(--secondary-text-color);
   padding: 10px;
-  background: rgb(14, 14, 15);
-  background: linear-gradient(
-    180deg,
-    rgba(14, 14, 15, 0.9) 1%,
-    rgba(24, 24, 25, 0) 100%
-  );
+  background: rgba(14, 14, 15, 0.473);
   position: relative;
 }
 .portfolio-card-container h1:hover {
