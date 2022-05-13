@@ -252,7 +252,7 @@ a:active {
   color: var(--secondary-text-color);
   padding: 10px;
   background: rgb(14,14,15);
-background: linear-gradient(180deg, rgba(14,14,15,0.8263736263736263) 1%, rgba(14,14,15,0.8461538461538461) 33%, rgba(86,86,89,0) 100%);
+  background: linear-gradient(180deg, rgba(14,14,15,0.8263736263736263) 1%, rgba(14,14,15,0.5522584033613445) 37%, rgba(86,86,89,0) 100%);
   border-radius: 10px 10px 0 0;
   position: relative;
 }

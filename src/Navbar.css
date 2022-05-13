@@ -88,7 +88,7 @@ nav {
 
 .mobile-nav li {
   font-size: 1.5rem;
-  color: var(--);
+  color: var(--grey-light);
   padding: 1rem;
   position: relative;
   z-index: 160;

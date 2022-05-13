@@ -1,5 +1,4 @@
 import React from "react";
-//aws
 import { FaAws } from "react-icons/fa";
 import { SiHeroku } from "react-icons/si";
 import { SiCucumber } from "react-icons/si";
@@ -72,7 +71,30 @@ export class PortfolioList extends React.Component {
       <BsGithub />,
       <FiExternalLink />,
     ];
-    let iconsNames = icons.map((i) => i.type.name);
+    let iconsNamess = icons.map((i) => i.type.name);
+
+    //troubleshooting icons not rendering on deploy
+    let iconsNames = ["FaReact",
+    "FaAws",
+    "SiPostman",
+    "SiPuppeteer",
+    "SiRedux",
+    "SiMongodb",
+    "GrNode",
+    "IoLogoJavascript",
+    "SiJquery",
+    "AiOutlineHtml",
+    "SiJest",
+    "DiSass",
+    "DiCss3",
+    "BsFillBootstrapFill",
+    "SiCucumber",
+    "SiHeroku",
+    "SiPostgresql",
+    "SiExpress",
+    "SiPassport",
+    "BsGithub",
+    "FiExternalLink",]
 
     return (
       <div key={project.id} className="portfolio-card-container">
