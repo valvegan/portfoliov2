@@ -19,7 +19,9 @@ import { SiPostman } from "react-icons/si";
 import { SiPostgresql } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { SiPassport } from "react-icons/si";
+import {SiExpo} from "react-icons/si";
 import { BsGithub } from "react-icons/bs";
+import {IoLogoFirebase}from "react-icons/io";
 import ScrollComponent from "./ScrollComponent";
 import "./portfolio-file.css";
 
@@ -70,6 +72,8 @@ export class PortfolioList extends React.Component {
       <SiPassport />,
       <BsGithub />,
       <FiExternalLink />,
+      <SiExpo />,
+      <IoLogoFirebase/>
     ];
     let iconsNamess = icons.map((i) => i.type.name);
 
@@ -94,7 +98,10 @@ export class PortfolioList extends React.Component {
     "SiExpress",
     "SiPassport",
     "BsGithub",
-    "FiExternalLink",]
+    "FiExternalLink",
+    "SiExpo",
+    "IoLogoFirebase"
+]
 
     return (
       <div key={project.id} className="portfolio-card-container">
