@@ -30,13 +30,40 @@ import "./portfolio-file.css";
 export class PortfolioList extends React.Component {
   state = {
     buttonExpand: false,
+    icons: [
+      "FaReact",
+      "FaAws",
+      "SiPostman",
+      "SiPuppeteer",
+      "SiRedux",
+      "SiMongodb",
+      "GrNode",
+      "IoLogoJavascript",
+      "SiJquery",
+      "AiOutlineHtml",
+      "SiJest",
+      "DiSass",
+      "DiCss3",
+      "BsFillBootstrapFill",
+      "SiCucumber",
+      "SiHeroku",
+      "SiPostgresql",
+      "SiExpress",
+      "SiPassport",
+      "BsGithub",
+      "FiExternalLink",
+      "SiExpo",
+      "SiFirebase",
+      "FaAngular",
+      "SiTypescript",
+    ],
   };
 
   buttonToggle() {
     this.setState({ buttonExpand: !this.state.buttonExpand });
   }
 
-  /*//find the index of matching icon and then render the icon
+  //find the index of matching icon and then render the icon
   getIndices(values, targets) {
     let value = values.map((v) => v.toLowerCase().slice(0, v.indexOf(" ")));
     let target = targets.map((t) => t.substring(2).toLowerCase());
@@ -48,10 +75,9 @@ export class PortfolioList extends React.Component {
     let target = targets.map((t) => t.substring(2).toLowerCase());
     return value.map((s) => target.findIndex((t) => s.includes(t)));
   }
-*/
+
   render() {
     const { project } = this.props;
-
     let icons = [
       <FaReact />,
       <FaAws />,
@@ -79,36 +105,7 @@ export class PortfolioList extends React.Component {
       <FaAngular />,
       <SiTypescript />,
     ];
-    //let iconsNamess = icons.map((i) => i.type.name);
-
-    //troubleshooting icons not rendering on deploy
-    let iconsNames = [
-      "FaReact",
-      "FaAws",
-      "SiPostman",
-      "SiPuppeteer",
-      "SiRedux",
-      "SiMongodb",
-      "GrNode",
-      "IoLogoJavascript",
-      "SiJquery",
-      "AiOutlineHtml",
-      "SiJest",
-      "DiSass",
-      "DiCss3",
-      "BsFillBootstrapFill",
-      "SiCucumber",
-      "SiHeroku",
-      "SiPostgresql",
-      "SiExpress",
-      "SiPassport",
-      "BsGithub",
-      "FiExternalLink",
-      "SiExpo",
-      "SiFirebase",
-      "FaAngular",
-      "SiTypescript",
-    ];
+    let iconsNamess = icons.map((i) => i.type.name);
 
     return (
       <div key={project.id} className="portfolio-card-container">
@@ -151,7 +148,7 @@ export class PortfolioList extends React.Component {
             <div className="icons-container">
               <h3>Frameworks</h3>
               <ul className="icons-ul">
-                {this.getIndices(project.Frameworks, iconsNames).map(
+                {this.getIndices(project.Frameworks, this.state.icons).map(
                   (i) =>
                     i > -1 && (
                       <li className="icon" key={i}>
@@ -174,7 +171,7 @@ export class PortfolioList extends React.Component {
             <div className="icons-container">
               <h3>Libraries</h3>
               <ul className="icons-ul">
-                {this.getIndices(project.Libraries, iconsNames).map(
+                {this.getIndices(project.Libraries, this.state.icons).map(
                   (i) =>
                     i > -1 && (
                       <li className="icon" key={i}>
@@ -199,7 +196,7 @@ export class PortfolioList extends React.Component {
               <ul className="icons-ul">
                 {this.getIndices(
                   project.Serverless_Cloud_Provider,
-                  iconsNames
+                  this.state.icons
                 ).map(
                   (i) =>
                     i > -1 && (
@@ -223,7 +220,7 @@ export class PortfolioList extends React.Component {
             <div className="icons-container">
               <h3>Test Runners</h3>
               <ul className="icons-ul">
-                {this.getIndices(project.Test_Runners, iconsNames).map(
+                {this.getIndices(project.Test_Runners, this.state.icons).map(
                   (i) =>
                     i > -1 && (
                       <li className="icon" key={i}>
@@ -246,7 +243,7 @@ export class PortfolioList extends React.Component {
             <div className="icons-container">
               <h3>Architecture</h3>
               <ul className="icons-ul">
-                {this.getIndices(project.Architecture, iconsNames).map(
+                {this.getIndices(project.Architecture, this.state.icons).map(
                   (i) =>
                     i > -1 && (
                       <li className="icon" key={i}>
@@ -269,7 +266,7 @@ export class PortfolioList extends React.Component {
             <div className="icons-container">
               <h3>Database</h3>
               <ul className="icons-ul">
-                {this.getIndices(project.Database, iconsNames).map(
+                {this.getIndices(project.Database, this.state.icons).map(
                   (i) =>
                     i > -1 && (
                       <li className="icon" key={i}>
@@ -291,7 +288,7 @@ export class PortfolioList extends React.Component {
             <div className="icons-container">
               <h3>Technologies</h3>
               <ul className="icons-ul">
-                {this.getIndices(project.Technologies, iconsNames).map(
+                {this.getIndices(project.Technologies, this.state.icons).map(
                   (i) =>
                     i > -1 && (
                       <li className="icon" key={i}>
@@ -319,7 +316,7 @@ export class PortfolioList extends React.Component {
                 {" "}
                 {this.getIndicesReverse(
                   project.Heroku_Deployment,
-                  iconsNames
+                  this.state.icons
                 ).map(
                   (i) =>
                     i > -1 && (
@@ -334,7 +331,10 @@ export class PortfolioList extends React.Component {
             {project.Github_Repo && (
               <a href={project.Github_Repo}>
                 {" "}
-                {this.getIndicesReverse(project.Github_Repo, iconsNames).map(
+                {this.getIndicesReverse(
+                  project.Github_Repo,
+                  this.state.icons
+                ).map(
                   (i) =>
                     i > -1 && (
                       <li className="icon" key={i}>

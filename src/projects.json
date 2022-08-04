@@ -1,12 +1,10 @@
 {
   "projects": [
-    
-      
     {
       "id": "1",
       "Title": "MyFlix Client - Angular",
       "Description": "MyFlix is a small application developed in Angular, and it showcases various informations from a small database (REST API) of movies. Users can register, update/add information about themselves (securely via password hashing) and add/remove movie titles to a list of their favourites.",
-      "Technologies": ["HTML5, SCSS, TypeScript"],
+      "Technologies": ["HTML5", "SCSS", "TypeScript"],
       "Libraries": ["Angular-Material"],
       "Frameworks": ["Angular"],
       "Github_Repo": ["https://github.com/valvegan/MyFlix-angular-"],
@@ -80,14 +78,6 @@
       "Live_Site": ["https://valvegan.github.io/simple-js-app/"],
       "img": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/simple_js_app.png",
       "imgmobile": "https://raw.githubusercontent.com/valvegan/portfoliov2/master/src/images/js-app_mobile.jpg"
-    },
-    {
-      "id": "7",
-      "Title": "Portofolio site",
-      "Description": "The website you're currently viewing",
-      "Libraries": ["React.js"],
-      "Github_Repo": "https://github.com/valvegan/events_app",
-      "Live_Site": "https://valvegan.github.io/events_app/"
-      }
+    }
   ]
 }

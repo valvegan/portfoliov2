@@ -101,13 +101,10 @@
   width: 110%;
   left: -10px;
   opacity: 0.85;
-filter: blur(3px);
-  transition: filter 0.4s linear;
   z-index: 0;
   border-radius: 10px;
 }
 .project-img:hover {
-  filter: none;
   opacity: 0.96;
 }
 
