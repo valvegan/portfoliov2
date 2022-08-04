@@ -79,7 +79,7 @@ export class PortfolioList extends React.Component {
       <FaAngular/>,
       <SiTypescript/>,
     ];
-    let iconsNamess = icons.map((i) => i.type.name);
+    //let iconsNamess = icons.map((i) => i.type.name);
 
     //troubleshooting icons not rendering on deploy
     let iconsNames = ["FaReact",
