@@ -22,6 +22,8 @@ import { SiPassport } from "react-icons/si";
 import {SiExpo} from "react-icons/si";
 import { BsGithub } from "react-icons/bs";
 import {IoLogoFirebase}from "react-icons/io";
+import {FaAngular}from "react-icons/io";
+import {SiTypescript}from "react-icons/io";
 import ScrollComponent from "./ScrollComponent";
 import "./portfolio-file.css";
 
@@ -73,7 +75,9 @@ export class PortfolioList extends React.Component {
       <BsGithub />,
       <FiExternalLink />,
       <SiExpo />,
-      <IoLogoFirebase/>
+      <IoLogoFirebase/>,
+      <FaAngular/>,
+      <SiTypescript/>,
     ];
     let iconsNamess = icons.map((i) => i.type.name);
 
@@ -100,7 +104,9 @@ export class PortfolioList extends React.Component {
     "BsGithub",
     "FiExternalLink",
     "SiExpo",
-    "IoLogoFirebase"
+    "IoLogoFirebase",
+    "FaAngular",
+    "SiTypescript"
 ]
 
     return (
