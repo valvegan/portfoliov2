@@ -19,11 +19,11 @@ import { SiPostman } from "react-icons/si";
 import { SiPostgresql } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { SiPassport } from "react-icons/si";
-import {SiExpo} from "react-icons/si";
+import { SiExpo } from "react-icons/si";
 import { BsGithub } from "react-icons/bs";
-import {SiFirebase}from "react-icons/si";
-import {FaAngular}from "react-icons/fa";
-import {SiTypescript}from "react-icons/si";
+import { SiFirebase } from "react-icons/si";
+import { FaAngular } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
 import ScrollComponent from "./ScrollComponent";
 import "./portfolio-file.css";
 
@@ -36,7 +36,7 @@ export class PortfolioList extends React.Component {
     this.setState({ buttonExpand: !this.state.buttonExpand });
   }
 
-  //find the index of matching icon and then render the icon
+  /*//find the index of matching icon and then render the icon
   getIndices(values, targets) {
     let value = values.map((v) => v.toLowerCase().slice(0, v.indexOf(" ")));
     let target = targets.map((t) => t.substring(2).toLowerCase());
@@ -48,7 +48,7 @@ export class PortfolioList extends React.Component {
     let target = targets.map((t) => t.substring(2).toLowerCase());
     return value.map((s) => target.findIndex((t) => s.includes(t)));
   }
-
+*/
   render() {
     const { project } = this.props;
 
@@ -75,39 +75,40 @@ export class PortfolioList extends React.Component {
       <BsGithub />,
       <FiExternalLink />,
       <SiExpo />,
-      <SiFirebase/>,
-      <FaAngular/>,
-      <SiTypescript/>,
+      <SiFirebase />,
+      <FaAngular />,
+      <SiTypescript />,
     ];
     //let iconsNamess = icons.map((i) => i.type.name);
 
     //troubleshooting icons not rendering on deploy
-    let iconsNames = ["FaReact",
-    "FaAws",
-    "SiPostman",
-    "SiPuppeteer",
-    "SiRedux",
-    "SiMongodb",
-    "GrNode",
-    "IoLogoJavascript",
-    "SiJquery",
-    "AiOutlineHtml",
-    "SiJest",
-    "DiSass",
-    "DiCss3",
-    "BsFillBootstrapFill",
-    "SiCucumber",
-    "SiHeroku",
-    "SiPostgresql",
-    "SiExpress",
-    "SiPassport",
-    "BsGithub",
-    "FiExternalLink",
-    "SiExpo",
-    "SiFirebase",
-    "FaAngular",
-    "SiTypescript"
-]
+    let iconsNames = [
+      "FaReact",
+      "FaAws",
+      "SiPostman",
+      "SiPuppeteer",
+      "SiRedux",
+      "SiMongodb",
+      "GrNode",
+      "IoLogoJavascript",
+      "SiJquery",
+      "AiOutlineHtml",
+      "SiJest",
+      "DiSass",
+      "DiCss3",
+      "BsFillBootstrapFill",
+      "SiCucumber",
+      "SiHeroku",
+      "SiPostgresql",
+      "SiExpress",
+      "SiPassport",
+      "BsGithub",
+      "FiExternalLink",
+      "SiExpo",
+      "SiFirebase",
+      "FaAngular",
+      "SiTypescript",
+    ];
 
     return (
       <div key={project.id} className="portfolio-card-container">
