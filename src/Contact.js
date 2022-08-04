@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { GrMailOption } from "react-icons/gr";
+
 import emailjs from "@emailjs/browser";
 
 const Result = () => {
@@ -43,16 +43,6 @@ export function Contact(props) {
   return (
     <div className="contact">
       <h1>Send me a message!</h1>
-
-      <div className="direct-contact">
-        <h3>Direct contact:</h3>
-        <button>
-          <a href="mailto:valentinavaccari@hotmail.com">
-            <GrMailOption />
-          </a>
-        </button>
-        <a href="mailto:office@valentina.com">valentinavaccari@hotmail.com</a>
-      </div>
 
       <form
         ref={form}

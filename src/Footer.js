@@ -1,8 +1,8 @@
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
-import { BsInstagram } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
-import { FiMail } from "react-icons/fi";
+import { GrMailOption } from "react-icons/gr";
+import { FaMediumM } from "react-icons/fa";
 import footer_svg from "./images/footer_svg.svg";
 import bikeToRepeat from "./images/bikeIcon_rotating-wheels.svg";
 import "./Footer.css";
@@ -27,14 +27,19 @@ export function Footer() {
             {" "}
             <AiFillGithub />
           </a>
-          <a href="https://www.instagram.com/vpaintz/">
-            {" "}
-            <BsInstagram />
-          </a>
           <a href="https://www.linkedin.com/in/valentina-vaccari-b70265bb/">
             {" "}
             <BsLinkedin />
           </a>
+          <a href="mailto:valentinavaccari@hotmail.com">
+            {" "}
+            <GrMailOption />
+          </a>
+          <a href="https://medium.com/@looneyvees">
+            {" "}
+            <FaMediumM />
+          </a>
+          
         </div>
       </div>
 
